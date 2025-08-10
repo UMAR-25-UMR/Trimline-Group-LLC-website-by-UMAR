@@ -72,17 +72,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact Form Submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // In a real application, you would send the form data to a server here
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
+
 
 
 
