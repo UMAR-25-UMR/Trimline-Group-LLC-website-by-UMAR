@@ -470,16 +470,32 @@ nav ul li a:hover::after {
             color: var(--secondary);
             position: relative;
             padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .content-section p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--dark);
         }
 
         .content-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--accent);
+}
+        .content-section ul {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 600px;
         }
 
         /* Plastic Types */
@@ -496,6 +512,7 @@ nav ul li a:hover::after {
             padding: 30px;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            text-align: center;
         }
 
         .plastic-card:hover {
