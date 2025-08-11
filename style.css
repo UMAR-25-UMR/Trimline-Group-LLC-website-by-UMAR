@@ -220,8 +220,8 @@ nav ul li a:hover::after {
         }
 
         .btn:hover {
-            background: transparent;
-            color: var(--secondary);
+            background: white;
+            color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -268,8 +268,8 @@ nav ul li a:hover::after {
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 30px;
         }
 
         .feature-card {
@@ -386,6 +386,7 @@ nav ul li a:hover::after {
         .highlight-content {
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .highlight-content h2 {
@@ -398,7 +399,39 @@ nav ul li a:hover::after {
             font-size: 1.1rem;
             margin-bottom: 30px;
             line-height: 1.8;
+            text-align: center;
         }
+
+        .highlight-content a.btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
+            margin: 10px;
+            font-size: 16px;
+        }
+        .highlight-content a.btn:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .highlight-content a.btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .highlight-content a.btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }        
+
 
         /* Page Content */
         .page-content {
@@ -658,6 +691,12 @@ nav ul li a:hover::after {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #aaa;
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
 }
 
 /* Responsive adjustments for footer logo */
