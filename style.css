@@ -557,9 +557,18 @@ nav ul li a:hover::after {
         }
 
         .contact-info h3 {
+            text-align: center;
             font-size: 24px;
             margin-bottom: 20px;
             color: var(--secondary);
+            
+        }
+
+        .contact-info p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--dark);
         }
 
         .contact-details {
