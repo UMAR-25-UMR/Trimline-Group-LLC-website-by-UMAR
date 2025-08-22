@@ -214,7 +214,7 @@ nav ul li a.active::after {
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -633,7 +633,7 @@ nav ul li a.active::after {
         }
 
         .contact-form {
-            background: #f8f9fa;
+            background: #e9e8ec;
             padding: 40px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
