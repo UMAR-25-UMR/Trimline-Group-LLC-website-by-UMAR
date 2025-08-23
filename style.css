@@ -1080,11 +1080,20 @@ nav ul li a.active::after {
 .flip-card-front {
     background: white;
     color: var(--dark);
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.6); /* Glow effect */
+    border-radius: 12px; /* Optional: smooth corners */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.flip-card-front:hover {
+    border-color: #003366; /* Glow color on hover */
+    box-shadow: 0 0 25px rgba(0, 180, 216, 0.8);
 }
 
 .flip-card-back {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
+    box-shadow: 0 0 15px rgba(0, 6, 11, 0.6);
     transform: rotateY(180deg);
 }
 
