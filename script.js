@@ -11,9 +11,14 @@ if (mobileToggle) {
     });
 }
 
-// Close mobile menu when clicking a link
+// Close mobile menu when clicking a normal link (NOT dropdown toggles)
 document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        if (link.classList.contains("dropdown-toggle")) {
+            // Do nothing if it's a dropdown toggle
+            return;
+        }
+
         nav.classList.remove('active');
         if (mobileToggle) {
             const icon = mobileToggle.querySelector('i');
@@ -72,7 +77,28 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Dropdown toggle
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const parent = this.parentElement;
 
+    // Close other dropdowns
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      if (drop !== parent) drop.classList.remove("active");
+    });
 
+    // Toggle current dropdown
+    parent.classList.toggle("active");
+  });
+});
 
+// Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      drop.classList.remove("active");
+    });
+  }
+});
