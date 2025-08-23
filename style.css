@@ -1002,3 +1002,151 @@ nav ul li a.active::after {
     width: 100%;
   }
 }
+
+/* flip card */
+
+/* Flip Cards Section */
+.flip-cards-container {
+    margin: 60px 0;
+    padding: 20px 0;
+}
+
+.flip-cards-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.flip-cards-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+}
+
+.flip-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.flip-card {
+    display: block;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-checkbox {
+    display: none;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card-checkbox:checked ~ .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.flip-card-front {
+    background: white;
+    color: var(--dark);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-content {
+    width: 100%;
+}
+
+
+
+.flip-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.flip-card-back h3 {
+    color: white;
+}
+
+.flip-card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.flip-btn {
+    background: white;
+    color: var(--primary);
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 14px;
+}
+
+.flip-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Responsive Design for Flip Cards */
+@media (max-width: 992px) {
+    .flip-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .flip-card {
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card {
+        height: 300px;
+    }
+    
+    .flip-card-front, .flip-card-back {
+        padding: 20px;
+    }
+}
