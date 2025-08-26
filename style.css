@@ -397,7 +397,7 @@ nav ul li a.active::after {
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.6); /* Glow effect */
             transition: var(--transition);
             padding: 30px;
             text-align: center;
@@ -1161,4 +1161,208 @@ nav ul li a.active::after {
     .flip-card-front, .flip-card-back {
         padding: 20px;
     }
+}
+
+
+/* Subsidiaries Section */
+/* Subsidiaries Section */
+
+.subsidiaries-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.subsidiary {
+    text-align: center;
+    background: var(--light);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 0 25px rgba(0, 86, 179, 0.6); /* Glow effect */
+    transition: var(--transition);
+}
+
+.subsidiary:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.subsidiary h2 {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.subsidiary h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* space below text */
+    transform: translateX(-50%);
+    width: 60px;  /* underline length */
+    height: 3px;  /* underline thickness */
+    background-color: #0056b3; /* underline color */
+    border-radius: 2px;
+}
+
+.subsidiary p {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.subsidiary i {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+/* ---------------- Responsive Breakpoints ---------------- */
+
+/* Large Tablets (2 cards side by side) */
+@media (max-width: 1200px) {
+    .subsidiaries-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* Tablets (1 card per row, smaller padding) */
+@media (max-width: 992px) {
+    .subsidiary {
+        padding: 30px;
+    }
+
+    .subsidiary h2 {
+        font-size: 1.6rem;
+    }
+
+    .subsidiary p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (smaller screens, full width) */
+@media (max-width: 768px) {
+    .subsidiaries-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .subsidiary {
+        padding: 25px;
+    }
+
+    .subsidiary h2 {
+        font-size: 1.4rem;
+    }
+
+    .subsidiary h2::after {
+        width: 40px; /* smaller underline */
+        height: 2px;
+    }
+
+    .subsidiary p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra Small Mobile (portrait phones) */
+@media (max-width: 480px) {
+    .subsidiary {
+        padding: 20px;
+    }
+
+    .subsidiary h2 {
+        font-size: 1.2rem;
+    }
+
+    .subsidiary p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Logo Slider Styles */
+/* Logo Slider Styles */
+.logo-slider {
+    padding: 60px 0;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-slider .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-slider .section-title h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo-slider .section-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    width: max-content; /* auto-fit based on children */
+    animation: slide 40s linear infinite;
+}
+
+.slide {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    flex-shrink: 0;
+}
+
+.slide img {
+    max-height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* move by half (first set) */
+}
+
+/* Pause animation on hover */
+.slider-container:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .slide { padding: 0 15px; }
+}
+
+@media (max-width: 768px) {
+    .logo-slider { padding: 40px 0; }
+    .logo-slider .section-title h2 { font-size: 1.8rem; }
+    .slide { padding: 0 10px; }
+    .slide img { max-height: 50px; }
+    .slider-track { animation: slide 30s linear infinite; }
+}
+
+@media (max-width: 576px) {
+    .slide { padding: 0 8px; }
+    .slide img { max-height: 40px; }
 }
