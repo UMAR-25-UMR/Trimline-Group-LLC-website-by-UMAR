@@ -140,6 +140,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="Subsidiaries.html">Subsidiaries</a></li>
                         <li><a href="trade.html">International Trade</a></li>
                         <li><a href="brands.html">E-Commerce & Brands</a></li>
                         <li><a href="tech.html">Tech</a></li>
@@ -162,6 +163,109 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+    </button>
+
+<style>
+    /* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #003366 0%, #003366 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+    border: none;
+    font-size: 20px;
+    transform: translateY(20px);
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+    background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
+}
+
+.back-to-top:active {
+    transform: scale(0.95);
+}
+
+/* Pulse effect when near bottom */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+    }
+}
+.back-to-top.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+}
+@media (max-width: 576px) {
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+</style>
+
+<script>
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
+            backToTopButton.classList.add('pulse');
+        } else {
+            backToTopButton.classList.remove('pulse');
+        }
+    } else {
+        backToTopButton.classList.remove('show');
+        backToTopButton.classList.remove('pulse');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 
     <script src="script.js"></script>
 </body>

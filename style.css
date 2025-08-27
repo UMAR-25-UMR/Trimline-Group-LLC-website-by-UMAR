@@ -618,70 +618,6 @@ nav ul li a.active::after {
             margin: 0 auto;
             max-width: 600px;
         }
-
-        /* Plastic Types */
-        .plastic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .plastic-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .plastic-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .plastic-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .plastic-card h4 {
-            margin: 20px 0 10px;
-            color: var(--secondary);
-        }
-
-        /* Base Oil Table */
-        .oil-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .oil-table th {
-            background: var(--secondary);
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-
-        .oil-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .oil-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .oil-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-
         /* Contact Section */
         .contact-section {
             padding: 100px 0;
@@ -1289,65 +1225,58 @@ nav ul li a.active::after {
 /* Logo Slider Styles */
 /* Logo Slider Styles */
 .logo-slider {
-    padding: 60px 0;
+    padding: 80px 0;
     background: white;
     overflow: hidden;
-    position: relative;
-}
-
-.logo-slider .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.logo-slider .section-title h2 {
-    font-size: 2.2rem;
-    color: #003366;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.logo-slider .section-title p {
-    color: #666;
-    font-size: 1.1rem;
 }
 
 .slider-container {
-    overflow: hidden;
     position: relative;
-    width: 100%;
+    overflow: hidden;
+    height: 120px;
 }
 
 .slider-track {
     display: flex;
-    width: max-content; /* auto-fit based on children */
-    animation: slide 40s linear infinite;
+    animation: logoScroll 30s linear infinite;
+    width: calc(200px * 26);
 }
 
 .slide {
-    height: 100px;
+    width: 200px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    flex-shrink: 0;
 }
 
 .slide img {
+    max-width: 100%;
     max-height: 100px;
-    width: auto;
-    transition: all 0.3s ease;
+    opacity: 1;
+    transition: var(--transition);
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* move by half (first set) */
+.slide:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-/* Pause animation on hover */
+@keyframes logoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 13));
+    }
+}
+
+/* Pause animation on hover 
 .slider-container:hover .slider-track {
     animation-play-state: paused;
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -1359,10 +1288,13 @@ nav ul li a.active::after {
     .logo-slider .section-title h2 { font-size: 1.8rem; }
     .slide { padding: 0 10px; }
     .slide img { max-height: 50px; }
-    .slider-track { animation: slide 30s linear infinite; }
+    .slider-track { animation: logoScroll 30s linear infinite; } /* ✅ fixed */
 }
 
 @media (max-width: 576px) {
     .slide { padding: 0 8px; }
     .slide img { max-height: 40px; }
 }
+
+
+
