@@ -8,17 +8,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
 
-    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWGHEHVD8Y"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KWGHEHVD8Y');
-</script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWGHEHVD8Y');
+    </script>
+    
+    <style>
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #003366 0%, #003366 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+            border: none;
+            font-size: 20px;
+            transform: translateY(20px);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+            background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
+        }
+
+        .back-to-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Pulse effect when near bottom */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+            }
+        }
+        .back-to-top.pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -48,12 +104,45 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="particles"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1>CONGLOMERATE FOCUSED ON INTERNATIONAL TRADE, E-COMMERCE & TECHNOLOGY</h1>
-                <div class="hero-btns">
-                    <a href="about.html" class="btn">LEARN MORE</a>
-                    <a href="contact.html" class="btn btn-outline">CONTACT US</a>
+                <h1 class="hero-title animate">TRIMLINE GROUP</h1>
+                <p class="hero-subtitle animate">CONGLOMERATE FOCUSED ON INTERNATIONAL TRADE, E-COMMERCE & TECHNOLOGY</p>
+                <div class="hero-buttons animate">
+                    <a href="about.html" class="btn">Explore Our Story</a>
+                    <a href="contact.html" class="btn btn-outline">Be a Partner</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat animate">
+                        <span class="stat-number" data-count="48">0</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat animate">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">+ Partners Worldwide</span>
+                    </div>
+                    <div class="stat animate">
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-label">Business Divisions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="globe-container">
+                    <div class="globe">
+                        <div class="globe-sphere"></div>
+                        <div class="globe-outer-shadow"></div>
+                        <div class="globe-worldmap">
+                            <div class="globe-worldmap-back"></div>
+                            <div class="globe-worldmap-front"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,43 +152,202 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Trimline Group</h2>
+                <h2>Our Core Business Divisions</h2>
+                <p>Trimline Group delivers excellence across multiple industries through specialized subsidiaries</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card animate">
                     <div class="feature-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-globe-americas"></i>
                     </div>
-                    <h3>HIGHEST QUALITY PRODUCTS</h3>
-                    <p>direct sourcing & warehousing</p>
+                    <h3>International Trade</h3>
+                    <p>Global supply chain solutions across polymers, chemicals, and commodities with operations in USA, UAE, China, and Singapore.</p>
+                    <a href="trade.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
                 <div class="feature-card animate">
                     <div class="feature-icon">
-                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>EASY PAYMENT TERMS</h3>
-                    <p>We enable our clients to get the best possible payment terms. We work hard that best is important when it comes to payments and we will be an industry in international trade among just 80%.</p>
+                    <h3>E-Commerce & Brands</h3>
+                    <p>Leading Pakistan's digital retail with Khazanay.pk, Fadano, Birdsoles, and premium FMCG brands.</p>
+                    <a href="brands.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
                 <div class="feature-card animate">
                     <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                        <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>FAST LOGISTICS</h3>
-                    <p>We understand production hold up a low to avoidable, at a cost less revenue but delivery throughout our extensive shipping network.</p>
-                </div>
-                
-                <div class="feature-card animate">
-                    <div class="feature-icon">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <h3>BEST PRICES</h3>
-                    <p>We constantly monitor market prices for all products and commodities and try our best to advance our direct solutions when the moment is right.</p>
+                    <h3>Technology</h3>
+                    <p>Innovative AI solutions with PowerPresent.ai, Yaara.ai, and Sawda.ai driving digital transformation.</p>
+                    <a href="tech.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="animate">Nearly Five Decades of Excellence</h2>
+                    <p class="animate">Since 1977, Trimline Group has established itself as a pioneer in global supply chain solutions and diversified business operations. With a growing focus on e-commerce and digital consumer brands, we continue to innovate while maintaining our legacy of excellence.</p>
+                    <div class="about-highlights">
+                        <div class="highlight animate">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Transparent business operations</span>
+                        </div>
+                        <div class="highlight animate">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Global network of partners</span>
+                        </div>
+                        <div class="highlight animate">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Innovation-driven approach</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn animate">Learn More About Us</a>
+                </div>
+                <div class="about-visual">
+                    <div class="timeline-visual animate">
+                        <div class="timeline-milestone">
+                            <div class="milestone-year">1977</div>
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-text">Founded</div>
+                        </div>
+                        <div class="timeline-milestone">
+                            <div class="milestone-year">1990s</div>
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-text">Global Expansion</div>
+                        </div>
+                        <div class="timeline-milestone">
+                            <div class="milestone-year">2000s</div>
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-text">Diversification</div>
+                        </div>
+                        <div class="timeline-milestone">
+                            <div class="milestone-year">Today</div>
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-text">Innovation Leader</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence Section -->
+    <section class="global-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Presence</h2>
+                <p>Strategically located operations across key economic hubs worldwide</p>
+            </div>
+            <div class="global-map">
+                <div class="map-container">
+                    <div class="world-map">
+                        <!-- Simplified world map using CSS -->
+                        <div class="continent americas">
+                            <div class="location-point usa" data-country="USA">
+                                <div class="point-pulse"></div>
+                                <div class="point-info">
+                                    <h4>USA</h4>
+                                    <p>Trimline International LLC</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="continent asia">
+                            <div class="location-point uae" data-country="UAE">
+                                <div class="point-pulse"></div>
+                                <div class="point-info">
+                                    <h4>UAE</h4>
+                                    <p>Trimline International LLC</p>
+                                </div>
+                            </div>
+                            <div class="location-point china" data-country="China">
+                                <div class="point-pulse"></div>
+                                <div class="point-info">
+                                    <h4>China</h4>
+                                    <p>Jiangyin Jietong Zhejiang Chemicals</p>
+                                </div>
+                            </div>
+                            <div class="location-point singapore" data-country="Singapore">
+                                <div class="point-pulse"></div>
+                                <div class="point-info">
+                                    <h4>Singapore</h4>
+                                    <p>Intersmart Singapore</p>
+                                </div>
+                            </div>
+                            <div class="location-point pakistan" data-country="Pakistan">
+                                <div class="point-pulse"></div>
+                                <div class="point-info">
+                                    <h4>Pakistan</h4>
+                                    <p>E-commerce Operations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidiaries Preview -->
+    <section class="subsidiaries-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Subsidiaries</h2>
+                <p>Diverse business units working together under the Trimline Group umbrella</p>
+            </div>
+            <div class="subsidiaries-grid">
+                <div class="subsidiary-card animate">
+                    <div class="subsidiary-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Trimline Polymers</h3>
+                    <p>Specialized in supply of industrial polymers and raw materials for packaging and manufacturing industries.</p>
+                </div>
+                <div class="subsidiary-card animate">
+                    <div class="subsidiary-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Trimline Commodities</h3>
+                    <p>Engaged in international commodity trading and raw material supply chain management.</p>
+                </div>
+                <div class="subsidiary-card animate">
+                    <div class="subsidiary-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Trimline Jade Chemicals</h3>
+                    <p>Suppliers of premium chemicals for industrial and commercial applications worldwide.</p>
+                </div>
+                <div class="subsidiary-card animate">
+                    <div class="subsidiary-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Trimline Tech Ventures</h3>
+                    <p>Dedicated to technology solutions, innovation, and global digital transformation projects.</p>
+                </div>
+            </div>
+            <div class="text-center animate">
+                <a href="Subsidiaries.html" class="btn">View All Subsidiaries</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="animate">Ready to explore opportunities with us?</h2>
+                <p class="animate">Get in touch with our team to discuss how we can collaborate and create value together.</p>
+                <div class="cta-buttons animate">
+                    <a href="contact.html" class="btn">Contact Us</a>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Logo Slider Section -->
 <section class="logo-slider">
@@ -143,72 +391,14 @@
         </div>
     </div>
 </section>
-<br><br>
-<br><br>
 
-
-    <!-- Services Highlight Section -->
-    <section class="service-highlight">
-        <div class="container">
-            <div class="highlight-content">
-                <h2 style="position: relative; display: inline-block; text-align: center;"> International Trade
-  <div style="width: 80px; height: 4px; background: var(--accent); margin: 10px auto 0;"></div>
-</h2>
-                <p>International Trade Divisions including Polymers, Commodities and Jade Chem</p>
-                <a href="trade.html" class="btn">LEARN MORE</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- E-Commerce & Brands Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>E-Commerce & Brands</h2>
-            </div>
-            <div class="highlight-content">
-                <p>Amazing Footware & Delicious Tea & Coffee brands</p>
-                <div class="btn-container">
-                <a href="brands.html" class="btn">LEARN MORE</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="service-highlight">
-        <div class="container">
-            <div class="highlight-content">
-                <h2 style="position: relative; display: inline-block; text-align: center;"> Technology
-  <div style="width: 80px; height: 4px; background: var(--accent); margin: 10px auto 0;"></div>
-</h2>
-                <p>Amazing ai tools for Presentations, Writing and Tade</p>
-                <a href="tech.html" class="btn">LEARN MORE</a>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- Subsidiaries Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Subsidiaries</h2>
-            </div>
-            <div class="highlight-content">
-                <p>Our Subsidiaries & Divisions</p>
-                <div class="btn-container">
-                <a href="Subsidiaries.html" class="btn">LEARN MORE</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <a href="index.html" class="footer-logo">
-                        <img src="TG Text Logo.png" alt="Trimline Group Logo">
-                    </a>
+                    <a href="index.html" class="footer-logo"><img src="TG Text Logo.png" alt="Trimline Group Logo"></a>
                     <p>Trimline Group is a Limited Liability Company registered in Shenzhen, Wyoming USA. We have handled business worth millions of dollars in the most transparent fashion.</p>
                 </div>
                 
@@ -241,166 +431,34 @@
         </div>
     </footer>
 
-
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-<style>
-    /* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #003366 0%, #003366 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
-    border: none;
-    font-size: 20px;
-    transform: translateY(20px);
-}
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
-    background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
-}
-
-.back-to-top:active {
-    transform: scale(0.95);
-}
-
-/* Pulse effect when near bottom */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
-    }
-}
-.back-to-top.pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
-}
-@media (max-width: 576px) {
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
+    <script src="script.js"></script>
+    <script src="home.js"></script>
     
-<script src="script.js"></script>
-
-<!-- Font Awesome for icon -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<script>
-const backToTopButton = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
-            backToTopButton.classList.add('pulse');
-        } else {
-            backToTopButton.classList.remove('pulse');
-        }
-    } else {
-        backToTopButton.classList.remove('show');
-        backToTopButton.classList.remove('pulse');
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
-
-
-
-
     <script>
-        // Mobile Menu Toggle
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const nav = document.querySelector('nav');
-        
-        mobileToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileToggle.querySelector('i').classList.toggle('fa-bars');
-            mobileToggle.querySelector('i').classList.toggle('fa-times');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                mobileToggle.querySelector('i').classList.add('fa-bars');
-                mobileToggle.querySelector('i').classList.remove('fa-times');
-            });
-        });
-        
-        // Scroll animations
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if(elementPosition < screenPosition) {
-                    element.classList.add('appear');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Header scroll effect
+        // Back to Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if(window.scrollY > 50) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+                if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
+                    backToTopButton.classList.add('pulse');
+                } else {
+                    backToTopButton.classList.remove('pulse');
+                }
             } else {
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                backToTopButton.classList.remove('show');
+                backToTopButton.classList.remove('pulse');
             }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
