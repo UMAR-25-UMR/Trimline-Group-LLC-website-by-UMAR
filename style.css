@@ -292,12 +292,12 @@ nav ul li a.active::after {
         }
 
         .features-grid {
-            display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap: 30px;
-        }
-
+        display: flex;
+        gap: 20px;               /* spacing between cards */
+        justify-content: center; /* optional: centers cards */
+}
         .feature-card {
+            width: 100%;
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
@@ -680,10 +680,12 @@ nav ul li a.active::after {
     font-size: 14px;
 }
 
+/* For mobile (1 card per row) */
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr; /* 1 card per row on small screens */
-    }
+  .features-grid {
+    flex-direction: column;
+    align-items: center; /* keeps them centered */
+  }
 }
 
 /* Responsive adjustments for footer logo */

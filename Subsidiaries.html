@@ -8,123 +8,412 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Subsidiaries.css">
+
+       <style>
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #003366 0%, #003366 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+            border: none;
+            font-size: 20px;
+            transform: translateY(20px);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+            background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
+        }
+
+        .back-to-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Pulse effect when near bottom */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+            }
+        }
+        .back-to-top.pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo">
-                    <img src="Logos/TG_LOGO_TEXT.png" alt="Trimline Group Logo">
-                </a>
-                <div class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <a href="index.html" class="logo">
+                        <img src="Logos/TG_LOGO_TEXT.png" alt="Trimline Group Logo">
+                    </a>
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="Subsidiaries.html" class="nav-link active">Subsidiaries</a></li>
+                            <li><a href="trade.html">International Trade</a></li>
+                            <li><a href="brands.html">E-Commerce & Brands</a></li>
+                            <li><a href="tech.html">Tech</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="Subsidiaries.html" class="nav-link active">Subsidiaries</a></li>
-                        <li><a href="trade.html">International Trade</a></li>
-                        <li><a href="brands.html">E-Commerce & Brands</a></li>
-                        <li><a href="tech.html">Tech</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Page Content -->
-    <section class="page-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <h1 class="page-title">Subsidiaries</h1>
+        <!-- Updated Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="video/hero-video1.mp4" type="video/mp4">
+                    <!-- Add additional source formats if needed for browser compatibility -->
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate">Our Subsidiaries</h1>
+                    <p class="hero-subtitle animate">Discover the diverse business units working together under the Trimline Group umbrella to deliver excellence across multiple industries</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="48">0</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">+ Partners Worldwide</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-label">Business Divisions</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="subsidiaries-list">
+        <!-- The rest of the page remains unchanged -->
+        <!-- Stats Section -->
 
+
+        <!-- Business Structure Visualization -->
+        <section class="corporate-structure">
+            <div class="container">
+                <h2>Our Corporate Structure</h2>
+                <p>Trimline Group operates through a network of specialized subsidiaries, each focusing on different market sectors while sharing our core values of excellence and innovation.</p>
+                
+                <div class="structure-visual">
+                    <div class="center-company">
+                        <h3>Trimline Group</h3>
+                        <p>Parent Company</p>
+                    </div>
+                    
+                    <div class="sector sector-trade">
+                        <h3>International Trade</h3>
+                        <ul>
+                            <li>Trimline Polymers</li>
+                            <li>Trimline Commodities</li>
+                            <li>Jade Chemicals</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sector sector-ecommerce">
+                        <h3>E-Commerce & Brands</h3>
+                        <ul>
+                            <li>Khazanay TL Enterprises</li>
+                            <li>Trimline Brands Co</li>
+                            <li>Fadano & Birdsoles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sector sector-tech">
+                        <h3>Technology</h3>
+                        <ul>
+                            <li>Trimline Tech Ventures</li>
+                            <li>PowerPresent.ai</li>
+                            <li>Yaara.ai</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sector sector-other">
+                        <h3>Other Ventures</h3>
+                        <ul>
+                            <li>Trimline Impex</li>
+                            <li>JYT Holdings</li>
+                            <li>Trimline Communication</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Connector lines -->
+                    <div class="connector" style="width: 180px; top: 50%; left: 50%; transform: rotate(45deg);"></div>
+                    <div class="connector" style="width: 180px; top: 50%; left: 50%; transform: rotate(135deg);"></div>
+                    <div class="connector" style="width: 180px; top: 50%; left: 50%; transform: rotate(-45deg);"></div>
+                    <div class="connector" style="width: 180px; top: 50%; left: 50%; transform: rotate(-135deg);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsidiaries Grid -->
+        <section class="subsidiaries-container">
+            <div class="container">
+                <div class="subsidiaries-grid">
                     <!-- Subsidiary Cards -->
-                    <div class="subsidiary">
-                        <h2>Trimline Group</h2>
-                        <p>Parent company of all subsidiaries, focusing on global trade, supply chain, and international business solutions.</p>
-                        <p><i class="fas fa-envelope"></i> info@trimlineco.com</p>
-                        <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Parent Company</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h2>Trimline Group</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Parent company of all subsidiaries, focusing on global trade, supply chain, and international business solutions.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline International LLC</h2>
-                        <p>Handles overseas operations and business expansion across major global hubs.</p>
-                        <p><i class="fas fa-envelope"></i> intl@trimlineco.com</p>
-                        <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">International Trade</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h2>Trimline International LLC</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Handles overseas operations and business expansion across major global hubs.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>intl@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Polymers</h2>
-                        <p>Specialized in supply of industrial polymers and raw materials for packaging and manufacturing industries.</p>
-                        <p><i class="fas fa-envelope"></i> polymers@trimlineco.com</p>
-                        <a href="https://trimlinepolymers.com/" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">International Trade</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h2>Trimline Polymers</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Specialized in supply of industrial polymers and raw materials for packaging and manufacturing industries.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>polymers@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://trimlinepolymers.com/" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Khazanay TL Enterprises</h2>
-                        <p>Focused on trading and investment services to strengthen diversified business operations.</p>
-                        <p><i class="fas fa-envelope"></i> khazanay@trimlineco.com</p>
-                        <a href="https://www.khazanay.pk/" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">E-Commerce</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h2>Khazanay TL Enterprises</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Focused on trading and investment services to strengthen diversified business operations.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>khazanay@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://www.khazanay.pk/" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Commodities</h2>
-                        <p>Engaged in international commodity trading and raw material supply chain management.</p>
-                        <p><i class="fas fa-envelope"></i> commodities@trimlineco.com</p>
-                        <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">International Trade</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h2>Trimline Commodities</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Engaged in international commodity trading and raw material supply chain management.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>commodities@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Jade Chemicals</h2>
-                        <p>Suppliers of premium chemicals for industrial and commercial applications worldwide.</p>
-                        <p><i class="fas fa-envelope"></i> chemicals@trimlineco.com</p>
-                        <a href="https://jadechemi.com/" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Chemicals</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h2>Trimline Jade Chemicals</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Suppliers of premium chemicals for industrial and commercial applications worldwide.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>chemicals@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://jadechemi.com/" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Brands Co</h2>
-                        <p>Focused on e-commerce, retail, and developing premium brand experiences for consumers.</p>
-                        <p><i class="fas fa-envelope"></i> brands@trimlineco.com</p>
-                        <a href="https://fadano.com/" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">E-Commerce</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <h2>Trimline Brands Co</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Focused on e-commerce, retail, and developing premium brand experiences for consumers.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>brands@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://fadano.com/" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Tech Ventures</h2>
-                        <p>Dedicated to technology solutions, innovation, and global digital transformation projects.</p>
-                        <p><i class="fas fa-envelope"></i> tech@trimlineco.com</p>
-                        <a href="tech.html" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Technology</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h2>Trimline Tech Ventures</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Dedicated to technology solutions, innovation, and global digital transformation projects.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>tech@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="tech.html" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Impex</h2>
-                        <p>International import-export division ensuring smooth trade operations across multiple industries.</p>
-                        <p><i class="fas fa-envelope"></i> impex@trimlineco.com</p>
-                        <a href="#" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Import/Export</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-ship"></i>
+                            </div>
+                            <h2>Trimline Impex</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>International import-export division ensuring smooth trade operations across multiple industries.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>impex@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="#" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>JYT Holdings</h2>
-                        <p>Investment and holding company diversifying Trimline’s business interests globally.</p>
-                        <p><i class="fas fa-envelope"></i> jyt@trimlineco.com</p>
-                        <a href="https://jytholdings.com/" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Holdings</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h2>JYT Holdings</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Investment and holding company diversifying Trimline's business interests globally.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>jyt@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://jytholdings.com/" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
 
-                    <div class="subsidiary">
-                        <h2>Trimline Communication</h2>
-                        <p>Specialized in media, corporate communications, and marketing consultancy services.</p>
-                        <p><i class="fas fa-envelope"></i> communication@trimlineco.com</p>
-                        <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore</a>
+                    <div class="subsidiary-card">
+                        <div class="subsidiary-tag">Communications</div>
+                        <div class="subsidiary-card-header">
+                            <div class="subsidiary-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h2>Trimline Communication</h2>
+                        </div>
+                        <div class="subsidiary-card-content">
+                            <p>Specialized in media, corporate communications, and marketing consultancy services.</p>
+                            <div class="subsidiary-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>communication@trimlineco.com</span>
+                            </div>
+                        </div>
+                        <div class="subsidiary-card-footer">
+                            <a href="https://www.trimlineco.com" target="_blank" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -166,106 +455,31 @@
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-<style>
-    /* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #003366 0%, #003366 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
-    border: none;
-    font-size: 20px;
-    transform: translateY(20px);
-}
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+        <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
 
-.back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
-    background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
-}
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+                if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
+                    backToTopButton.classList.add('pulse');
+                } else {
+                    backToTopButton.classList.remove('pulse');
+                }
+            } else {
+                backToTopButton.classList.remove('show');
+                backToTopButton.classList.remove('pulse');
+            }
+        });
 
-.back-to-top:active {
-    transform: scale(0.95);
-}
-
-/* Pulse effect when near bottom */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
-    }
-}
-.back-to-top.pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
-}
-@media (max-width: 576px) {
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
-
-<script>
-const backToTopButton = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
-            backToTopButton.classList.add('pulse');
-        } else {
-            backToTopButton.classList.remove('pulse');
-        }
-    } else {
-        backToTopButton.classList.remove('show');
-        backToTopButton.classList.remove('pulse');
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>
