@@ -157,29 +157,31 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-stats {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .stat {
-    text-align: center;
-    min-width: 120px;
+  text-align: center;
+  min-width: 120px;
+  flex-basis: calc(33.33% - 26.67px); /* adjust width for 3 stats per row */
 }
 
 .stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2ec4ff;
-    font-family: 'Montserrat', sans-serif;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    opacity: 1;
+  font-size: 0.9rem;
+  opacity: 1;
 }
+
 
 .hero-visual {
     position: absolute;
@@ -225,11 +227,12 @@ h1, h2, h3, h4, h5 {
     left: 20%;
     animation-delay: 4s;
 }
+/*
 
 .globe-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
 }
 
@@ -281,6 +284,7 @@ h1, h2, h3, h4, h5 {
     opacity: 0.4;
     transform: rotateY(180deg);
 }
+*/
 
 /* About Preview Section */
 .about-preview {
@@ -397,7 +401,7 @@ h1, h2, h3, h4, h5 {
 .world-map-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 .location-point {
@@ -458,11 +462,11 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Location point positions */
-.usa { top: 45%; left: 21%; }
-.uae { top: 55%; left: 60%; }
-.china { top: 38%; left: 73%; }
-.singapore { top: 69%; left: 73%; }
-.pakistan { top: 48%; left: 63%; }
+.usa { top: 45%; left: 20%; }
+.uae { top: 55%; left: 62%; }
+.china { top: 38%; left: 76%; }
+.singapore { top: 69%; left: 75%; }
+.pakistan { top: 48%; left: 66%; }
 
 /* Pulse animation */
 @keyframes pulse {
@@ -715,8 +719,8 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 576px) {
     .hero {
-        padding: 80px 15px 40px;
-        min-height: 90vh;
+        padding: 250px 15px 40px;
+        min-height: 130vh;
     }
     
     .hero-title {
@@ -762,7 +766,7 @@ h1, h2, h3, h4, h5 {
     .timeline-visual::before {
         top: 0;
         bottom: 0;
-        left: 50%;
+        left: 3%;
         width: 2px;
         height: 100%;
         transform: translateX(-50%);

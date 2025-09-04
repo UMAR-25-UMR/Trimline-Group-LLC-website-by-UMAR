@@ -88,7 +88,7 @@
             display: block;
             font-size: 3rem;
             font-weight: 700;
-            color: #2ec4ff;
+            color: #ffffff;
             margin-bottom: 10px;
             font-family: 'Montserrat', sans-serif;
         }
@@ -217,7 +217,7 @@
             text-align: center;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             z-index: 5;
-            border: 1px solid rgba(0, 86, 179, 0.1);
+            border: 2px solid rgba(0, 86, 179, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -227,22 +227,22 @@
         }
 
         .sector-trade {
-            top: 20%;
+            top: 15%;
             left: 15%;
         }
 
         .sector-ecommerce {
-            top: 20%;
+            top: 15%;
             right: 15%;
         }
 
         .sector-tech {
-            bottom: 20%;
+            bottom: 5%;
             left: 15%;
         }
 
         .sector-other {
-            bottom: 20%;
+            bottom: 5%;
             right: 15%;
         }
 

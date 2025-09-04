@@ -17,35 +17,39 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
     
-    // Animate stats counting
-    function animateValue(element, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            element.innerHTML = Math.floor(progress * (end - start) + start);
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    }
-    
-    // Initialize stats animation when they come into view
-    const stats = document.querySelectorAll('.stat-number');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = parseInt(entry.target.getAttribute('data-count'));
-                animateValue(entry.target, 0, target, 2000);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    stats.forEach(stat => {
-        observer.observe(stat);
+// Animate stats counting
+function animateValue(element, start, end, duration, suffix = "", decimals = 0) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const current = progress * (end - start) + start;
+        element.innerHTML = current.toFixed(decimals) + suffix;
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Initialize stats animation when they come into view
+const stats = document.querySelectorAll('.stat-number');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = parseFloat(entry.target.getAttribute('data-count'));
+            const suffix = entry.target.getAttribute('data-suffix') || "";
+            const decimals = String(target).includes(".") ? 2 : 0;
+            animateValue(entry.target, 0, target, 2000, suffix, decimals);
+            observer.unobserve(entry.target);
+        }
     });
+}, { threshold: 0.5 });
+
+stats.forEach(stat => {
+    observer.observe(stat);
+});
+
     
     // Create particle effect for hero background
     function createParticles() {
