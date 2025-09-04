@@ -9,18 +9,304 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="png" href="Logos/TG_LOGO _NAV.png">
 
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #003366;
+            --accent: #00a8e8;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.4s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KWGHEHVD8Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  gtag('config', 'G-KWGHEHVD8Y');
-</script>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
 
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Page Content */
+        .page-content {
+            padding: 150px 0 100px;
+        }
 
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .page-intro {
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Enhanced Contact Section Styles */
+        .professional-contact {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 86, 179, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 30px;
+        }
+        
+        .contact-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .contact-card p {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .contact-card a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        /* Enhanced Address Styling */
+        .address-container {
+            background: rgba(0, 86, 179, 0.05);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .address-section {
+            margin-bottom: 20px;
+        }
+        
+        .address-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .address-section h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .address-line {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .address-line:last-child {
+            border-bottom: none;
+        }
+        
+        .address-line i {
+            color: var(--accent);
+            margin-right: 10px;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+        
+        .address-text {
+            flex: 1;
+        }
+        
+        /* Centered Card */
+        .centered-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .map-section {
+            margin-top: 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ee 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            flex-direction: column;
+        }
+        
+        .map-placeholder i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .map-placeholder p {
+            font-size: 18px;
+            max-width: 500px;
+            text-align: center;
+            margin: 0 20px;
+        }
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #003366 0%, #003366 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+            border: none;
+            font-size: 20px;
+            transform: translateY(20px);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+            background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
+        }
+
+        .back-to-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-placeholder {
+                height: 300px;
+            }
+            
+            .map-placeholder i {
+                font-size: 40px;
+            }
+            
+            .map-placeholder p {
+                font-size: 16px;
+            }
+            
+            .address-line {
+                flex-direction: column;
+            }
+            
+            .address-line i {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-content {
+                padding: 130px 0 80px;
+            }
+            
+            .address-container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -41,7 +327,7 @@
                         <li><a href="trade.html">International Trade</a></li>
                         <li><a href="brands.html">E-Commerce & Brands</a></li>
                         <li><a href="tech.html">Tech</a></li>
-                        <li><a href="contact.html" class="nav-link active" >Contact Us</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -52,77 +338,83 @@
     <section class="page-content">
         <div class="container">
             <h1 class="page-title">Contact Us</h1>            
-            <div class="contact-section">
+            <div class="professional-contact">
                 <div class="content-wrapper">
                     <p class="page-intro">Trimline strives to provide the best service possible with every contact! We operate in a business built on trust. This can only be achieved through communication and experienced support from the first contact past your ten-year anniversary.</p>
                     
-                    <div class="contact-wrapper">
-                        <div class="contact-info">
-                            <h3>Get In Touch</h3>
-                            <p>At Trimline you always talk to a human!</p>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Our Global Locations</h3>
+                            <p>With offices across the globe, we're positioned to serve you wherever you are.</p>
                             
-                            <p>Have questions about Raw Material Sourcing? We receive specialized training regularly to ensure you’re receiving the best information possible. From basic questions to complex compliance inquiries, we’re here to help!</p>
-                            
-                            <p>For all your inquiries email us at info@trimlineco.com or call us at +1-646-980-4849</p>
-                            
-                            <div class="contact-details">
-                                <div class="contact-detail">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div>
-                                        <strong>Our addresses</strong>
-                                        <p style="text-align: left;">Trimline Group LLC, 2014 Could $5 Sheridan, WY 62803 USA</p>
-                                        <p style="text-align: left;">Trimline Group LLC, 30 N Gould St Sheridan, WY 82801 USA</p>
-                                        <p style="text-align: left;">1309 Coffeen Avenue STE 1200 Sheridan, WY 82801</p>
-                                        <p style="text-align: left;">Shams Business Center, Al Messaned, Sharjah, UAE</p>
-                                        <p style="text-align: left;">8th Zamzama Blvd, Zamzama Commercial Area Defence V Karachi, 75600</p>
-                                        <p style="text-align: left;">1st Floor, Plot MR 5/143, Zakariya lane, Virjee Street, Jodia Bazar, Karachi</p>
-                                        <p style="text-align: left;">10th Floor, Horizon Tower, Com 2/6, Khayaban-e-Saadi, Block 3 Clifton, Karachi, Pakistan</p>
+                            <div class="address-container">
+                                <div class="address-section">
+                                    <h4>USA Offices</h4>
+                                    <div class="address-line">
+                                        <i class="fas fa-building"></i>
+                                        <div class="address-text">Trimline Group LLC, 30 N Gould St Sheridan, WY 82801 USA</div>
+                                    </div>
+                                    <div class="address-line">
+                                        <i class="fas fa-building"></i>
+                                        <div class="address-text">1309 Coffeen Avenue STE 1200 Sheridan, WY 82801</div>
                                     </div>
                                 </div>
                                 
-                                <div class="contact-detail">
-                                    <i class="fas fa-envelope"></i>
-                                    <div>
-                                        <strong>Email</strong>
-                                        <p>info@trimlineco.com</p>
+                                <div class="address-section">
+                                    <h4>International Offices</h4>
+                                    <div class="address-line">
+                                        <i class="fas fa-globe"></i>
+                                        <div class="address-text">Shams Business Center, Al Messaned, Sharjah, UAE</div>
                                     </div>
-                                </div>
-                                
-                                <div class="contact-detail">
-                                    <i class="fas fa-phone-alt"></i>
-                                    <div>
-                                        <strong>Phone</strong>
-                                        <p>+1-646-980-4849</p>
+                                    <div class="address-line">
+                                        <i class="fas fa-globe"></i>
+                                        <div class="address-text">8th Zamzama Blvd, Zamzama Commercial Area Defence V Karachi, 75600</div>
+                                    </div>
+                                    <div class="address-line">
+                                        <i class="fas fa-globe"></i>
+                                        <div class="address-text">1st Floor, Plot MR 5/143, Zakariya lane, Virjee Street, Jodia Bazar, Karachi</div>
+                                    </div>
+                                    <div class="address-line">
+                                        <i class="fas fa-globe"></i>
+                                        <div class="address-text">10th Floor, Horizon Tower, Com 2/6, Khayaban-e-Saadi, Block 3 Clifton, Karachi, Pakistan</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="contact-form">
-                            <div id="formMessage" class="alert" style="display:none;"></div>
-                           <form id="contactForm" action="https://formspree.io/f/mnnzlblq" method="POST">
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Your message</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-block">Send Message</button>
-    </form>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email Us</h3>
+                            <p>For all inquiries, partnership opportunities, or general information:</p>
+                            <p><a href="mailto:info@trimlineco.com">info@trimlineco.com</a></p>
+                            <p><a href="mailto:info@trimlinepolymers.com">info@trimlinepolymers.com</a></p>
+                            <p><a href="mailto:info@jytholdings.com">info@jytholdings.com</a></p>
+                            <p><a href="mailto:sales@jadechemi.com">sales@jadechemi.com</a></p>
+                            <p><a href="mailto:cs@khazanay.pk">cs@khazanay.pk</a></p>
+
+                            <p>We typically respond to all emails within 24 hours during business days.</p>
+                        </div>
+                        
+                        <div class="contact-card centered-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Call Us Directly</h3>
+                            <p>Speak with our team during business hours:</p>
+                            <p style="font-size: 24px; font-weight: 700; color: var(--primary); margin: 15px 0;">+1-646-980-4849</p>
+                            <p>Our dedicated team is available Monday through Friday, 9:00 AM to 5:00 PM EST to assist you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-section">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>With a global presence across multiple continents, Trimline Group is strategically positioned to serve clients worldwide with efficiency and local expertise.</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +449,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Trimline Group LLC, 30 N Gould St Sheridan, WY 82801 USA</li>
                         <li><i class="fas fa-phone-alt"></i> +1-646-980-4849</li>
-                        <li><i class="fas fa-envelope"></i> info@trimlineco.com</li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:info@trimlineco.com"> info@trimlineco.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -168,278 +460,70 @@
         </div>
     </footer>
 
-
-        <!-- Back to Top Button -->
+    <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-<style>
-    /* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #003366 0%, #003366 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
-    border: none;
-    font-size: 20px;
-    transform: translateY(20px);
-}
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
-    background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
-}
-
-.back-to-top:active {
-    transform: scale(0.95);
-}
-
-/* Pulse effect when near bottom */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
-    }
-}
-.back-to-top.pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
-}
-@media (max-width: 576px) {
-    .back-to-top {
-        bottom: 15px;
-        right: 15px;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
-
-
-<!-- Font Awesome for icon -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<script>
-const backToTopButton = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-        if ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 > 85) {
-            backToTopButton.classList.add('pulse');
-        } else {
-            backToTopButton.classList.remove('pulse');
-        }
-    } else {
-        backToTopButton.classList.remove('show');
-        backToTopButton.classList.remove('pulse');
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
     <script>
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const alertEl = document.getElementById('formMessage');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
-            // Use Formspree endpoint
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('nav');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+        }
+
+        // Close mobile menu when clicking a normal link (NOT dropdown toggles)
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains("dropdown-toggle")) {
+                    // Do nothing if it's a dropdown toggle
+                    return;
                 }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success message
-                    alertEl.style.display = 'block';
-                    alertEl.className = 'alert alert-success';
-                    alertEl.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent.';
-                    
-                    // Reset form
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
+
+                nav.classList.remove('active');
+                if (mobileToggle) {
+                    const icon = mobileToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
                 }
-            })
-            .catch(error => {
-                // Show error message
-                alertEl.style.display = 'block';
-                alertEl.className = 'alert alert-error';
-                alertEl.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error sending message. Please try again.';
-            })
-            .finally(() => {
-                // Reset button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Send Message';
-                
-                // Hide alert after 5 seconds
-                setTimeout(() => {
-                    alertEl.style.display = 'none';
-                }, 5000);
             });
         });
-    }
-</script>
 
-<script>
-    // Mobile Menu Toggle
-const mobileToggle = document.querySelector('.mobile-toggle');
-const nav = document.querySelector('nav');
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(header) {
+                if(window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            }
+        });
 
-if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        const icon = mobileToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-}
+        // Back to Top Button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
 
-// Close mobile menu when clicking a normal link (NOT dropdown toggles)
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (link.classList.contains("dropdown-toggle")) {
-            // Do nothing if it's a dropdown toggle
-            return;
-        }
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
 
-        nav.classList.remove('active');
-        if (mobileToggle) {
-            const icon = mobileToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        }
-    });
-});
-
-// Scroll animations
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.animate');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-        
-        if(elementPosition < screenPosition) {
-            element.classList.add('appear');
-        }
-    });
-}
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if(header) {
-        if(window.scrollY > 50) {
-            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-        }
-    }
-});
-
-// Dropdown toggle
-document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
-  toggle.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const parent = this.parentElement;
-
-    // Close other dropdowns
-    document.querySelectorAll(".dropdown").forEach(drop => {
-      if (drop !== parent) drop.classList.remove("active");
-    });
-
-    // Toggle current dropdown
-    parent.classList.toggle("active");
-  });
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", function (e) {
-  if (!e.target.closest(".dropdown")) {
-    document.querySelectorAll(".dropdown").forEach(drop => {
-      drop.classList.remove("active");
-    });
-  }
-});
-
-</script>
-
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
