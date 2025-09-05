@@ -710,11 +710,11 @@ h1, h2, h3, h4, h5 {
     }
     
     /* Adjust point positions for mobile */
-    .usa { top: 45%; left: 21%; }
-.uae { top: 55%; left: 60%; }
+.usa { top: 46%; left: 20%; }
+.uae { top: 55%; left: 62%; }
 .china { top: 38%; left: 73%; }
-.singapore { top: 69%; left: 73%; }
-.pakistan { top: 48%; left: 63%; }
+.singapore { top: 69%; left: 75%; }
+.pakistan { top: 49%; left: 66%; }
 }
 
 @media (max-width: 576px) {
