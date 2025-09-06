@@ -822,17 +822,17 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-@media (max-width: 400px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .stat {
-        min-width: 100%;
-    }
+@media (max-width: 400px) { 
+    .hero-title { 
+        font-size: 1.8rem; 
+    } 
+    .hero-stats 
+    { 
+        flex-direction: column; 
+        gap: 15px; 
+    } 
+    .stat 
+    { 
+        min-width: 100%; 
+    } 
 }

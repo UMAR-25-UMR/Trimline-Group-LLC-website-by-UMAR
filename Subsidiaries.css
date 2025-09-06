@@ -507,26 +507,26 @@
             }
             
             .sector-trade {
-                top: 10%;
-                left: 50%;
+                top: 5%;
+                left: 32%;
                 transform: translateX(-50%);
             }
             
             .sector-ecommerce {
-                top: 30%;
-                right: 10%;
+                top: 32%;
+                right: 1%;
                 left: auto;
             }
             
             .sector-tech {
-                bottom: 30%;
-                left: 10%;
+                bottom: 33%;
+                left: 3%;
                 right: auto;
             }
             
             .sector-other {
-                bottom: 10%;
-                left: 50%;
+                bottom: -7%;
+                left: 32%;
                 transform: translateX(-50%);
             }
             
