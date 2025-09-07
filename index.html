@@ -74,6 +74,23 @@
         .back-to-top.pulse {
             animation: pulse 2s infinite;
         }
+        @media (max-width: 768px) {
+        .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+        }
+        @media (max-width: 576px){
+        .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+        }
     </style>
 </head>
 <body>
@@ -103,7 +120,6 @@
     </header>
 
     <!-- Hero Section -->
-        <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
             <video class="hero-video" autoplay muted loop playsinline>
@@ -121,30 +137,36 @@
                     <a href="contact.html" class="btn btn-outline">Be a Partner</a>
                 </div>
                 <div class="hero-stats">
-  <div class="stat animate">
-    <span class="stat-number" data-count="48">0</span>
-    <span class="stat-label">Years of Excellence</span>
-  </div>
-  <div class="stat animate">
-    <span class="stat-number" data-count="100">0</span>
-    <span class="stat-label">+ Partners Worldwide</span>
-  </div>
-  <div class="stat animate">
-    <!-- 👇 Added data-suffix=" M" -->
-    <span class="stat-number" data-count="18.67" data-suffix=" M">0</span>
-    <span class="stat-label">Yearly Turnover</span>
-  </div>
-  <div class="stat animate">
-    <span class="stat-number" data-count="11">0</span>
-    <span class="stat-label">Subsidiaries</span>
-  </div>
-  <div class="stat animate">
-    <span class="stat-number" data-count="3">0</span>
-    <span class="stat-label">Divisions</span>
-  </div>
-</div>
-
+                    <div class="stats-row">
+                        <div class="stat animate">
+                            <span class="stat-number" data-count="48">0</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat animate">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">+ Partners Worldwide</span>
+                        </div>
+                        <div class="stat animate">
+                            <span class="stat-number" data-count="18.67" data-suffix=" M">0</span>
+                            <span class="stat-label">Yearly Turnover</span>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat animate">
+                            <span class="stat-number" data-count="11">0</span>
+                            <span class="stat-label">Subsidiaries</span>
+                        </div>
+                        <div class="stat animate">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Divisions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- The rest of your HTML remains exactly the same -->
     <!-- Features Section -->
     <section class="features">
         <div class="container">
@@ -309,7 +331,7 @@
                 <div class="slide"><img src="partners logo/Picture11.png" alt="Partner Logo"></div>
                 <div class="slide"><img src="partners logo/Picture12.png" alt="Partner Logo"></div>
                 <div class="slide"><img src="partners logo/Picture13.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="partners logo/Picture14.png" alt="Partner Logo"></div>
+                <div class="slide"><img src="partners logo/Picture14.png" alt="Partner logo"></div>
                 <div class="slide"><img src="partners logo/Picture15.png" alt="Partner Logo"></div>
                 <div class="slide"><img src="partners logo/Picture16.png" alt="Partner Logo"></div>
                 <div class="slide"><img src="partners logo/Picture17.png" alt="Partner Logo"></div>

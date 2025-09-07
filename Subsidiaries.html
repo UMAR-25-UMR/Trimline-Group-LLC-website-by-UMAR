@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Subsidiaries.css">
 
-       <style>
+    <style>
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -64,6 +64,46 @@
         }
         .back-to-top.pulse {
             animation: pulse 2s infinite;
+        }
+        
+        /* Hero Stats Responsive Adjustment */
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            .hero-stats .stat {
+                flex: 0 0 calc(50% - 15px);
+                margin-bottom: 20px;
+            }
+            .hero-stats .stat:last-child {
+                flex: 0 0 100%;
+                margin-bottom: 0;
+            }
+        .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+        }
+        @media (max-width: 576px){
+        .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-stats {
+                gap: 20px;
+            }
+            .hero-stats .stat {
+                flex: 0 0 calc(50% - 10px);
+            }
         }
     </style>
     
@@ -467,6 +507,39 @@
 
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Stats counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const speed = 200; // The lower the slower
+            
+            statNumbers.forEach(statNumber => {
+                const target = parseInt(statNumber.getAttribute('data-count'));
+                let count = 0;
+                const increment = Math.ceil(target / speed);
+                
+                function updateCount() {
+                    if (count < target) {
+                        count += increment;
+                        if (count > target) count = target;
+                        statNumber.innerText = count;
+                        setTimeout(updateCount, 1);
+                    }
+                }
+                
+                // Start counter when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(statNumber);
+            });
         });
     </script>
 

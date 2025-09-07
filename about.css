@@ -180,10 +180,12 @@ nav ul li a.active::after {
     justify-content: center;
     gap: 60px;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .stat {
     text-align: center;
+    min-width: 120px;
 }
 
 .stat-number {
@@ -802,9 +804,9 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .about-hero h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
     
     .hero-stats {
@@ -813,6 +815,29 @@ footer {
     
     .stat-number {
         font-size: 2.5rem;
+    }
+    
+    .content-with-visual {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .timeline-visual {
+        height: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-stats {
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
     }
     
     .content-with-visual {
@@ -873,8 +898,26 @@ footer {
     }
     
     .hero-stats {
-        flex-direction: column;
-        gap: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .stat {
+        flex: 0 0 calc(50% - 20px);
+        min-width: auto;
+    }
+    
+    .stat:nth-child(3) {
+        flex: 0 0 100%;
+        margin-top: 10px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
     }
     
     .directors-container {
@@ -932,6 +975,32 @@ footer {
         font-size: 1.8rem;
     }
     
+    .about-hero p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-stats {
+        gap: 15px;
+    }
+    
+    .stat {
+        flex: 0 0 calc(50% - 15px);
+    }
+    
+    .stat:nth-child(3) {
+        flex: 0 0 100%;
+        margin-top: 5px;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
@@ -970,6 +1039,37 @@ footer {
     
     .point-info p {
         font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        padding: 120px 0 60px;
+    }
+    
+    .hero-stats {
+        gap: 10px;
+    }
+    
+    .stat {
+        flex: 0 0 calc(50% - 10px);
+    }
+    
+    .stat:nth-child(3) {
+        flex: 0 0 100%;
+        margin-top: 5px;
+    }
+    
+    .stat-number {
+        font-size: 1.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    .about-hero h1 {
+        font-size: 1.6rem;
     }
 }
 
@@ -1076,14 +1176,6 @@ footer {
         font-size: 1.9rem;
     }
     
-    .hero-stats {
-        gap: 15px;
-    }
-    
-    .stat-number {
-        font-size: 2rem;
-    }
-    
     .content-with-visual {
         margin: 50px 0;
     }
@@ -1150,16 +1242,6 @@ footer {
         font-size: 1.6rem;
     }
     
-    .hero-stats {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    
-    .stat {
-        flex: 0 0 45%;
-        margin-bottom: 20px;
-    }
-    
     .back-to-top {
         bottom: 15px;
         right: 15px;
@@ -1179,7 +1261,7 @@ footer {
     }
     
     .stat-number {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     
     .director-info h3 {
